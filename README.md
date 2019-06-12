@@ -13,7 +13,6 @@ ___
 ```
 * Create a database file
 ```python
-  python
   from classroom import db
   from classroom.models import User, Ct
   db.create_all()
