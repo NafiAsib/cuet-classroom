@@ -1,5 +1,8 @@
+from datetime import datetime, date
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from wtforms.fields.html5  import DateField, TimeField
+from wtforms_components import TimeField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from classroom.models import User
 
@@ -23,7 +26,7 @@ class LoginForm(FlaskForm):
 
 class PostForm(FlaskForm):
     course = StringField('Course Code', validators=[DataRequired()])
-    date = StringField('Date of Class Test', validators=[DataRequired()])
-    time = StringField('Time', validators=[DataRequired()])
+    date = DateField('Date of Class Test', format='%Y-%m-%d')
+    time = StringField('Time')
     syllabus = StringField('Syllabus', validators=[DataRequired()])
     submit = SubmitField('Post CT')
