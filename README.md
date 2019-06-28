@@ -10,14 +10,19 @@ ___
   pip install flask-bcrypt
   pip install flask-login
   pip install flask-wtf
+  pip install wtf-components
 ```
 * Create a database file
+```python
+  python createDB.py
+```
+or
 ```python
   from classroom import db
   from classroom.models import User, Ct
   db.create_all()
 ```
-* Run the following command and goto localhost:5000
+* Run run.py and goto localhost:5000
 ```
   python run.py
 ```
